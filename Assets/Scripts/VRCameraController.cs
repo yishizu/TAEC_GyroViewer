@@ -7,24 +7,16 @@ using UnityEngine;
 
 public class VRCameraController : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHandler
 {
-    public float turnSpeedMouse = 1f;
-    private bool gyroEnable = false;
-    
-    float horizontal;
-    float vertical;
-    public Transform container;
-    public Transform camera;
-
+    [SerializeField] private Transform container;
+    [SerializeField] private Transform camera;
+    [SerializeField] private List<Texture2D> textures = new List<Texture2D>();
+    [SerializeField] private TMP_Dropdown dropdown;
+    [SerializeField] private Slider slider;
     private Quaternion containerQuat;
     private Quaternion cameraQuat;
     private Quaternion rot;
-
-    [SerializeField]
-    private List<Texture2D> textures = new List<Texture2D>();
-
-    [SerializeField] private TMP_Dropdown dropdown;
-    [SerializeField] private Slider slider;
-
+    private float turnSpeedMouse = 1f;
+    private bool gyroEnable = false;
     private static VRCameraController instance;
     public static VRCameraController Instance()
     {
@@ -71,8 +63,7 @@ public class VRCameraController : MonoBehaviour, IBeginDragHandler, IDragHandler
         containerQuat = container.localRotation;
         cameraQuat = camera.localRotation;
     }
-
-    // ドラック中に呼ばれる.
+    
     public void OnDrag(PointerEventData eventData)
     {
         
@@ -81,8 +72,7 @@ public class VRCameraController : MonoBehaviour, IBeginDragHandler, IDragHandler
         
         camera.localEulerAngles = new Vector3(camera.localEulerAngles.x, 0, 0);
     }
-
-    // ドラックが終了したとき呼ばれる.
+    
     public void OnEndDrag(PointerEventData eventData)
     {
         

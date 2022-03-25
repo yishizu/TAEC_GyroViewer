@@ -325,7 +325,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8374546a933db4ef89ecca33c0ff76d2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  turnSpeedMouse: 1
   container: {fileID: 1006474509}
   camera: {fileID: 275811178}
   textures:
@@ -335,7 +334,7 @@ MonoBehaviour:
   - {fileID: 2800000, guid: 625e87242d98d4a74b215aed17cf1cee, type: 3}
   - {fileID: 2800000, guid: 5fce90fbd6f6949d8b465c60a2a61edc, type: 3}
   dropdown: {fileID: 1830513515}
-  slider: {fileID: 0}
+  slider: {fileID: 978428111}
 --- !u!1 &275811177
 GameObject:
   m_ObjectHideFlags: 0
